@@ -30,15 +30,15 @@ Pygame_teamproject
 #### 201603008 전종원
 
 #### 201602560 이재성
-* 4.30
+* 4.30 <br>
  pygame module 공부 <br>
- basic game coding (토끼 게임)
- image, font, sound loading
+ basic game coding (토끼 게임) <br>
+ image, font, sound loading <br>
  Button, text
-* 5.1
- menu screen develop
- (Text, Button, Sound, image, Font)
- Git push complete
+* 5.1 <br>
+ menu screen develop <br>
+ (Text, Button, Sound, image, Font) <br>
+ Git push complete <br>
  
 
 #### 201700820 김유림
