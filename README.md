@@ -14,7 +14,7 @@ Pygame_teamproject
 
 보스 죽이고 포로 구하면 victory <br>
 중간에 죽으면 lose <br>
-(+@ 시간 제한 걸어두고 그전까지 못깨면 lose? - 이건 내생각)
+(+@ 시간 제한 걸어두고 그전까지 못깨면 lose?)
 
 * 4.30
 * 각자 pygame모듈 공부 
@@ -31,7 +31,15 @@ Pygame_teamproject
 
 #### 201602560 이재성
 * 4.30
- *
+ pygame module 공부 <br>
+ basic game coding (토끼 게임)
+ image, font, sound loading
+ Button, text
+* 5.1
+ menu screen develop
+ (Text, Button, Sound, image, Font)
+ Git push complete
+ 
 
 #### 201700820 김유림
 
