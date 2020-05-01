@@ -41,6 +41,7 @@ def play(screen):
         for event in pygame.event.get():
             if start_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
+                    # start 화면 넣기
                     pass
             if help_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
