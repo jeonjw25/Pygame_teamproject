@@ -12,8 +12,8 @@ Pygame_teamproject
 2. 맵 3개
 3. victory / lose 화면 (에니메이션 처리 찾아보기)
 
-보스 죽이고 포로 구하면 victory
-중간에 죽으면 lose 
+보스 죽이고 포로 구하면 victory <br>
+중간에 죽으면 lose <br>
 (+@ 시간 제한 걸어두고 그전까지 못깨면 lose? - 이건 내생각)
 
 * 4.30
