@@ -16,6 +16,7 @@ Pygame_teamproject
 중간에 죽으면 lose <br>
 (+@ 시간 제한 걸어두고 그전까지 못깨면 lose?)
 
+### 계획
 * 4.30
 * 각자 pygame모듈 공부 
 * 5.1 
