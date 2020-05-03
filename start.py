@@ -83,7 +83,6 @@ class game:
                 self.player.motion(2)
                 if buf == 0:
                     self.player.shoot(screen, self.all_sprites, self.bullets)
-            sol.hit(self.all_sprites, self.bullets,self.enemys)
             #image draw
             stage_info.draw(screen)
             self.draw(stage_info, screen)
