@@ -16,6 +16,7 @@ Pygame_teamproject
 중간에 죽으면 lose <br>
 (+@ 시간 제한 걸어두고 그전까지 못깨면 lose?)
 
+### 계획
 * 4.30
 * 각자 pygame모듈 공부 
 * 5.1 
@@ -28,6 +29,12 @@ Pygame_teamproject
 * 발표 준비
 
 #### 201603008 전종원
+* 4.30 <br>
+pygame module 공부 <br>
+git 공부 <br>
+* 5.01 <br>
+map_1 개발 <br>
+
 
 #### 201602560 이재성
 * 4.30 <br>
