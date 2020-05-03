@@ -29,6 +29,12 @@ Pygame_teamproject
 * 발표 준비
 
 #### 201603008 전종원
+* 4.30 <br>
+pygame module 공부 <br>
+git 공부 <br>
+* 5.01 <br>
+map_1 개발 <br>
+
 
 #### 201602560 이재성
 * 4.30 <br>
