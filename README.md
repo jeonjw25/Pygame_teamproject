@@ -40,6 +40,10 @@ Pygame_teamproject
  menu screen develop <br>
  (Text, Button, Sound, image, Font) <br>
  Git push complete <br>
+* 5.2 <br>
+ pull starting game files(start.py, enemy.py ...) <br>
+ putting all together with f_screen.py (menu.py, complete.py, gameover.py)
+ merge f_screen.py and game files
  
 
 #### 201700820 김유림
