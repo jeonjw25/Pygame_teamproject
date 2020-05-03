@@ -34,7 +34,7 @@ def menu(screen):
         for event in pygame.event.get():
             if start_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    g.play(screen, stage)
+                    g.play(screen, stage.stage1())
                     # start 화면 넣기
                     pass
             if help_rect.collidepoint(pygame.mouse.get_pos()):
@@ -49,6 +49,7 @@ def menu(screen):
                 pygame.quit()
                 sys.exit()
             
+
 def help_screen(screen):
 
     image = pygame.image.load("resources/images/screen_images/helpscreen.png")
@@ -71,6 +72,7 @@ def help_screen(screen):
                 pygame.quit()
                 sys.exit()
 
+
 def complete(screen):
     sound.complete_music(0.3)
 
@@ -89,7 +91,7 @@ def complete(screen):
         for event in pygame.event.get():
             if continue_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    # restart option
+                    g.play(screen, stage.stage1())
                     pass
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -112,10 +114,11 @@ def gameover(screen):
     running = True
     while running:
         for event in pygame.event.get():
-            # if continue_rect.collidepoint(pygame.mouse.get_pos()):
-            #     if event.type == pygame.MOUSEBUTTONDOWN:
-            #         # restart option
-            #         pass
+            if continue_rect.collidepoint(pygame.mouse.get_pos()):
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    # restart option
+                    g.play(screen, stage.stage1())
+                    pass
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
