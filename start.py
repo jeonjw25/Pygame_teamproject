@@ -1,5 +1,5 @@
 import pygame
-import marco, enemy
+import marco, enemy, item
 import stage
 
 class game:
@@ -16,7 +16,7 @@ class game:
         self.enemys = pygame.sprite.Group()
         self.bullets = pygame.sprite.Group()
         self.player = marco.rossi()
-        self.item = pygame.sprite.Group()
+        self.items = pygame.sprite.Group()
         self.all_sprites.add(self.player)
         self.FPS = 30
     
@@ -55,8 +55,11 @@ class game:
 
 
         sol = enemy.soldier()
+        item1 = item.item() #item 객체생성
         self.all_sprites.add(sol)
+        self.all_sprites.add(item1) #sprites에 추가
         self.enemys.add(sol)
+        self.items.add(item1) #sprites그룹에 추가
 
         
         while self.running:
@@ -65,6 +68,7 @@ class game:
             self.events()
 
             self.player.update() #player jump
+
             #player move
             if self.keys[0] == True:
                 movement = stage_info.move(self.player.centerx)
@@ -85,13 +89,15 @@ class game:
                     self.player.shoot(screen, self.all_sprites, self.bullets)
             #image draw
             stage_info.draw(screen)
+            item1.appear(screen) #item 화면에 출력 
             self.draw(stage_info, screen)
         pygame.quit()
 
     def draw(self, stage, screen):
-        self.all_sprites.update()
+        self.all_sprites.update() 
         stage.draw(screen)
         self.all_sprites.draw(screen)
         self.bullets.draw(screen)
+        self.items.draw(screen) # draw함수에 추가.
         print(self.all_sprites)
-        pygame.display.update()
+        pygame.display.update() 

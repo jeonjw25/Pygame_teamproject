@@ -3,13 +3,14 @@ import pygame
 class soldier(pygame.sprite.Sprite):
     def __init__(self):
         super(soldier, self).__init__()
-        self.image = pygame.image.load('resources/images/soldier1.png')
+        self.image = pygame.image.load('resources/images/enemy2/soldier1.png')
         self.size = 120
         self.image = pygame.transform.scale(self.image,(self.size,self.size))
         self.centerx = 800
         self.centery = 400
         self.rect = pygame.Rect(((self.centerx,self.centery),(self.centerx+self.size,self.centery+self.size)))
         self.mask = pygame.mask.from_surface(self.image)
+        self.islive = True
 
     def hit(self, all_sprites, bullets, enemy):
         print(self.rect)

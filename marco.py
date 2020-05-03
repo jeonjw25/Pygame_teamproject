@@ -6,7 +6,7 @@ vec = pygame.math.Vector2
 class rossi(pygame.sprite.Sprite):
     def __init__(self):
         super(rossi, self).__init__()
-        self.image = pygame.image.load('resources/images/marco1.png')
+        self.image = pygame.image.load('resources/images/marco/marco1.png')
         self.mask = pygame.mask.from_surface(self.image)
         self.size = 120
         self.image = pygame.transform.scale(self.image,(self.size,self.size))
@@ -38,9 +38,9 @@ class rossi(pygame.sprite.Sprite):
         self.rect = pygame.Rect(((self.centerx,self.centery),(self.centerx+self.size,self.centery+self.size)))
 
     def motion(self,option = 0):
-        walk_image = ['resources/images/marco1.png','resources/images/marco3.png','resources/images/marco4.png','resources/images/marco5.png','resources/images/marco6.png',
-                            'resources/images/marco7.png','resources/images/marco8.png','resources/images/marco2.png']
-        shoot_image = ['resources/images/marco11.png','resources/images/marco9.png','resources/images/marco10.png']                 
+        walk_image = ['resources/images/marco/marco3.png','resources/images/marco/marco4.png','resources/images/marco/marco5.png','resources/images/marco/marco6.png','resources/images/marco/marco7.png',
+                            'resources/images/marco/marco6.png','resources/images/marco/marco5.png','resources/images/marco/marco4.png']
+        shoot_image = ['resources/images/marco/marco11.png','resources/images/marco/marco9.png','resources/images/marco/marco10.png']                 
         if option == 0:
             if self.isjump == False:
                 self.index = (self.index+1)%len(walk_image)
@@ -73,7 +73,7 @@ class rossi(pygame.sprite.Sprite):
 class bullet(pygame.sprite.Sprite):
     def __init__(self):
         super(bullet, self).__init__()
-        self.image = pygame.image.load('resources/images/bullet.png')
+        self.image = pygame.image.load('resources/images/bullet/bullet3.png')
         self.size = (100,20)
         self.image = pygame.transform.scale(self.image,self.size)
         self.damage = 0.5
@@ -85,5 +85,4 @@ class bullet(pygame.sprite.Sprite):
 
     def update(self):
         self.centerx += self.speed
-        print(self.centerx)
         self.rect = pygame.Rect((self.centerx, self.centery),(self.centerx+self.size[0], self.centery+self.size[1]))
