@@ -3,10 +3,11 @@ import pygame
 from stage import *
 from start import *
 from f_screen import *
+
 if __name__ == "__main__":
     pygame.init()
     g = start.game()
-    screen = pygame.display.set_mode((1000,657))
+    screen = pygame.display.set_mode((1000,736))
     pygame.display.set_caption("METAL SLUG")
     menu(screen)
     if g.play(screen, stage.stage1()) == 1:

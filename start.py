@@ -83,6 +83,7 @@ class game:
                 self.player.motion(2)
                 if buf == 0:
                     self.player.shoot(screen, self.all_sprites, self.bullets)
+                    
             #image draw
             stage_info.draw(screen)
             self.draw(stage_info, screen)
@@ -93,5 +94,6 @@ class game:
         stage.draw(screen)
         self.all_sprites.draw(screen)
         self.bullets.draw(screen)
+        self.item.draw(screen)
         print(self.all_sprites)
         pygame.display.update()
