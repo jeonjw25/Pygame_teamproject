@@ -168,6 +168,8 @@ class UFO(pygame.sprite.Sprite):
             print(gun.rect)
             enemy_bullets.add(gun)
             all_sprites.add(gun)
+            
+# 전종원 만세만세 만만세
 
 # class boss(pygame.sprite.Sprite):
 #     def __init__(self):
