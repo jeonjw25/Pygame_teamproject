@@ -1,25 +1,24 @@
 import pygame, sys
 # from pygame.rect import Rect
-import sound, start, stage
-from sound import *
+import start, stage
 from start import *
 from stage import *
 
 
-sound.intro_music(0.3)
+#sound.intro_music(0.3)
 g = start.game()
 
 def menu(screen):
     
-    image = pygame.transform.scale(pygame.image.load("resources/images/screen_images/backscreen.png"), (1000, 657)).convert_alpha()
+    image = pygame.transform.scale(pygame.image.load("resources/images/screen_images/backscreen.png"), (1000, 736)).convert_alpha()
     screen.blit(image, (0, 0))
     
     start_button = pygame.transform.scale(pygame.image.load("resources/images/button_images/start_button.png"), (200, 45)).convert_alpha()
-    start_rect = start_button.get_rect(x = 145, y = 525)
+    start_rect = start_button.get_rect(x = 145, y = 580)
     help_button = pygame.transform.scale(pygame.image.load("resources/images/button_images/help_button.png"), (143, 50)).convert_alpha()
-    help_rect = help_button.get_rect(x = 428, y = 525)
+    help_rect = help_button.get_rect(x = 428, y = 577)
     close_button = pygame.transform.scale(pygame.image.load("resources/images/button_images/close_button.png"), (175, 45)).convert_alpha()
-    close_rect = close_button.get_rect(x = 670, y = 528)
+    close_rect = close_button.get_rect(x = 670, y = 582)
 
 
     screen.blit(start_button, start_rect)
@@ -34,9 +33,7 @@ def menu(screen):
         for event in pygame.event.get():
             if start_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    g.play(screen, stage)
-                    # start 화면 넣기
-                    pass
+                    return 1
             if help_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     help_screen(screen)
@@ -48,7 +45,8 @@ def menu(screen):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            
+    return 0
+
 def help_screen(screen):
 
     image = pygame.image.load("resources/images/screen_images/helpscreen.png")
@@ -71,6 +69,7 @@ def help_screen(screen):
                 pygame.quit()
                 sys.exit()
 
+
 def complete(screen):
     sound.complete_music(0.3)
 
@@ -89,14 +88,14 @@ def complete(screen):
         for event in pygame.event.get():
             if continue_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    # restart option
+                    g.play(screen, stage.stage1())
                     pass
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
 
 def gameover(screen):
-    sound.gameover_music(0.3)
+    #sound.gameover_music(0.3)
 
     image = pygame.image.load("resources/images/screen_images/gameover.png")
     screen.blit(image, (0, 0))
@@ -112,10 +111,11 @@ def gameover(screen):
     running = True
     while running:
         for event in pygame.event.get():
-            # if continue_rect.collidepoint(pygame.mouse.get_pos()):
-            #     if event.type == pygame.MOUSEBUTTONDOWN:
-            #         # restart option
-            #         pass
+            if continue_rect.collidepoint(pygame.mouse.get_pos()):
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    # restart option
+                    g.play(screen, stage.stage1())
+                    pass
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()

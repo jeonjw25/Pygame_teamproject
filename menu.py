@@ -1,6 +1,4 @@
 import pygame, sys
-from pygame.rect import Rect
-import sound
 
 
 width, height = 1024, 876
@@ -9,7 +7,7 @@ WHITE = (255, 255, 255)
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Metalslug")
 
-sound.music(0.3)
+#sound.music(0.3)
 
 def play(screen):
     pygame.init()

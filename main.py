@@ -1,19 +1,24 @@
-#import screen #screen(image, option) option 0:menu, 1:helf, 2:complete, 3:gameover
+#import screen #screen(image, option) option 0:menu, 1:help, 2:complete, 3:gameover
 import pygame
-import stage, start
+from stage import *
+from start import *
+from f_screen import *
 
 if __name__ == "__main__":
-    pygame.init()
     g = start.game()
-    screen = pygame.display.set_mode((1000,657))
+    screen = pygame.display.set_mode((1000,736))
     pygame.display.set_caption("METAL SLUG")
-    #screen.menu(image, 0)
-    if g.play(screen, stage.stage1()) == 1:
+    menu(screen)
+    if g.play(screen, stage.stage1()):
         print('complete')
-        #if game.play(image, stage.boss_stage()) == 1:
-            #screen.menu(image,2)a
-        #else:
-            #screen.menu(image,3)a
-    #else:
-        #screen.menu(image, 3)
+        pygame.quit()
+        # if g.play(screen, stage.stage1.boss_stage()) == 1:
+            # screen.menu(image,2)a
+            # complete(screen)
+        # else:
+            # screen.menu(image,3)aaa
+            # gameover(screen)
+    else:
+        screen = pygame.display.set_mode((1000,600))
+        gameover(screen)
     pygame.quit()
