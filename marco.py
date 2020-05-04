@@ -23,9 +23,12 @@ class rossi(pygame.sprite.Sprite):
         self.isup = False
 
     def update(self, x=0, y=0):
+        self.posx +=x
+        self.posy +=y
+        self.rect.move_ip(x, y)
         if self.isjump:
             F = (1/2) *self.m*(self.v**2)
-            self.rect.move_ip(x, -F)
+            self.rect.move_ip(0, -F)
             self.posy -= F
             self.v -= 1
             if self.v<0:
@@ -33,10 +36,6 @@ class rossi(pygame.sprite.Sprite):
             if self.v == -9:
                 self.isjump = False
                 self.v, self.m = 8,2
-        else:
-            self.posx +=x
-            self.posy +=y
-            self.rect.move_ip(x, y)
 
     def motion(self,option = 0):
         walk_image = ['resources/images/marco/marco2.png','resources/images/marco/marco3.png','resources/images/marco/marco4.png','resources/images/marco/marco5.png','resources/images/marco/marco6.png',
@@ -94,6 +93,7 @@ class rossi(pygame.sprite.Sprite):
         else:
             gun.posx = self.posx + 50
             gun.posy = self.posy + 130
+        print(self.posx, gun.posx)
         gun.rect.move_ip(gun.posx, gun.posy)
         all_sprites.add(gun)
         bullets.add(gun)
@@ -136,9 +136,12 @@ class bullet(pygame.sprite.Sprite):
         self.speed = 40
 
     def change_dir(self):
-        self.image = pygame.image.load('resources/images/bullet/bullet8.png')
-        self.size = (20, 100)
+        if self.speed == 40:
+            self.image = pygame.image.load('resources/images/bullet/bullet8.png')
+            self.size = (40, 130)
+            self.speed = 40
+        else:
+            self.image = pygame.image.load('resources/images/bullet/bullet7.png')
+            self.size = (20, 100)
         self.image = pygame.transform.scale(self.image, self.size)
-        self.damage = 1
         self.rect = pygame.Rect(self.image.get_rect())
-        self.speed = 40

@@ -13,10 +13,10 @@ if __name__ == "__main__":
         g.stage_no = 1
         pygame.quit()
         # if g.play(screen, stage.stage1.boss_stage()) == 1:
-            # screen.menu(image,2)a
+            # screen.menu(image,2)
             # complete(screen)
         # else:
-            # screen.menu(image,3)aaa
+            # screen.menu(image,3)
             # gameover(screen)
     else:
         screen = pygame.display.set_mode((1000,600))

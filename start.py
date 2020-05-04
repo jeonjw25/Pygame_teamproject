@@ -19,7 +19,7 @@ class game:
         self.player = marco.rossi()
         self.items = pygame.sprite.Group()
         self.all_sprites.add(self.player)
-        self.FPS = 20
+        self.FPS = 30
         self.stage_no = 0
         # health
         self.health_img = pygame.image.load("resources/images/health/health.png")
@@ -90,6 +90,7 @@ class game:
                 movement = stage_info.move(self.player)
                 if movement == 0:
                     self.enemys.update(-self.player.speed)
+                    self.enemy_bullets.update(-self.player.speed)
                     self.items.update(-self.player.speed)
                 elif movement == -1:
                     break

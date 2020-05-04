@@ -92,13 +92,16 @@ class enemy_bullet(pygame.sprite.Sprite):
         self.speed = 30
         self.mode = 0
 
-    def update(self):
+    def update(self, x=0, y=0):
         if self.mode == 0:
             self.posx -= self.speed
             self.rect.move_ip(-self.speed,0)
         elif self.mode == 1:
-            self.posy -= self.speed
-            self.rect.move_ip(self.posx, self.speed)
+            self.posy += self.speed
+            self.rect.move_ip(0, self.speed)
+        self.posx +=x
+        self.posy +=y
+        self.rect.move_ip(x, y)
 
     def gun_change(self):
         self.mode = 1
@@ -165,7 +168,6 @@ class UFO(pygame.sprite.Sprite):
             gun = enemy_bullet()
             gun.gun_change()
             gun.rect.move_ip(self.posx, self.posy)
-            print(gun.rect)
             enemy_bullets.add(gun)
             all_sprites.add(gun)
 

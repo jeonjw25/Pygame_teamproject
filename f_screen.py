@@ -114,7 +114,8 @@ def gameover(screen):
             if continue_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # restart option
-                    g.play(screen, stage.stage1())
+                    screen = pygame.display.set_mode((1000,736))
+                    menu(screen)
                     pass
             if event.type == pygame.QUIT:
                 pygame.quit()
