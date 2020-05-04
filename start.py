@@ -1,4 +1,5 @@
 import pygame
+
 import marco, enemy
 import stage
 
@@ -19,6 +20,7 @@ class game:
         self.items = pygame.sprite.Group()
         self.all_sprites.add(self.player)
         self.FPS = 20
+        self.stage_no = 0
         # health
         self.health_img = pygame.image.load("resources/images/health/health.png")
         self.healthbar_img = pygame.image.load("resources/images/health/healthbar.png")
@@ -74,10 +76,11 @@ class game:
         while self.running:
             if self.player.hp == 0:
                 return 0
-            stage_info.generation_soldier(self.all_sprites, self.enemys)
-            stage_info.generation_movesoldier(self.all_sprites, self.enemys)
-            stage_info.generation_shootsoldier(self.all_sprites, self.enemys, self.enemy_bullets)
-            stage_info.generation_ufo(self.all_sprites, self.enemys, self.enemy_bullets)
+            if self.stage_no == 0:
+                stage_info.generation_soldier(self.all_sprites, self.enemys)
+                stage_info.generation_movesoldier(self.all_sprites, self.enemys)
+                stage_info.generation_shootsoldier(self.all_sprites, self.enemys, self.enemy_bullets)
+                stage_info.generation_ufo(self.all_sprites, self.enemys, self.enemy_bullets)
             self.clock.tick(self.FPS)
             #isend로 화면전환
             self.events()

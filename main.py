@@ -10,7 +10,7 @@ if __name__ == "__main__":
     pygame.display.set_caption("METAL SLUG")
     menu(screen)
     if g.play(screen, stage.stage1()):
-        print('complete')
+        g.stage_no = 1
         pygame.quit()
         # if g.play(screen, stage.stage1.boss_stage()) == 1:
             # screen.menu(image,2)a
