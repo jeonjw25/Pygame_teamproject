@@ -73,7 +73,7 @@ def help_screen(screen):
 def complete(screen):
     sound.complete_music(0.3)
 
-    image = pygame.transform.scale(pygame.image.load("resources/images/screen_images/complete.png"), (1000, 667)).convert_alpha()
+    image = pygame.transform.scale(pygame.image.load("resources/images/screen_images/complete.png"), (1000, 736)).convert_alpha() #1000,667
     screen.blit(image, (0, 0))
 
     continue_button = pygame.transform.scale(pygame.image.load("resources/images/button_images/continue_button.png"), (210, 48)).convert_alpha()

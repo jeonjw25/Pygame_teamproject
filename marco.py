@@ -3,7 +3,7 @@ import pygame
 class rossi(pygame.sprite.Sprite):
     def __init__(self):
         super(rossi, self).__init__()
-        self.image = pygame.image.load('resources/images/marco1.png')
+        self.image = pygame.image.load('resources/images/marco/marco1.png')
         self.mask = pygame.mask.from_surface(self.image)
         self.size = 120
         self.image = pygame.transform.scale(self.image,(self.size,self.size))
@@ -39,9 +39,9 @@ class rossi(pygame.sprite.Sprite):
             self.rect.move_ip(x, y)
 
     def motion(self,option = 0):
-        walk_image = ['resources/images/marco2.png','resources/images/marco3.png','resources/images/marco4.png','resources/images/marco5.png','resources/images/marco6.png',
-                            'resources/images/marco7.png','resources/images/marco8.png','resources/images/marco2.png']
-        shoot_image = ['resources/images/marco11.png','resources/images/marco9.png','resources/images/marco10.png']                 
+        walk_image = ['resources/images/marco/marco2.png','resources/images/marco/marco3.png','resources/images/marco/marco4.png','resources/images/marco/marco5.png','resources/images/marco/marco6.png',
+                            'resources/images/marco/marco7.png','resources/images/marco/marco8.png','resources/images/marco/marco2.png']
+        shoot_image = ['resources/images/marco/marco11.png','resources/images/marco/marco9.png','resources/images/marco/marco10.png']                 
         if option == 0:
             if self.isjump == False:
                 self.index = (self.index+1)%len(walk_image)
@@ -54,7 +54,7 @@ class rossi(pygame.sprite.Sprite):
             self.image = pygame.image.load(walk_image[0])
             self.image = pygame.transform.scale(self.image,(self.size,self.size))
         elif option == 3:
-            self.image = pygame.image.load('resources/images/marco13.gif')
+            self.image = pygame.image.load('resources/images/marco/marco13.gif')
             self.image = pygame.transform.scale(self.image, (self.size, self.size))
         elif option == 2:
             self.index = (self.index+1)%len(shoot_image)
@@ -109,7 +109,7 @@ class rossi(pygame.sprite.Sprite):
 class bullet(pygame.sprite.Sprite):
     def __init__(self):
         super(bullet, self).__init__()
-        self.image = pygame.image.load('resources/images/bullet.png')
+        self.image = pygame.image.load('resources/images/bullet/bullet3.png')
         self.size = (100,20)
         self.image = pygame.transform.scale(self.image,self.size)
         self.posx = 0
@@ -128,7 +128,7 @@ class bullet(pygame.sprite.Sprite):
             self.rect.move_ip(0, -self.speed)
 
     def gun_change(self):
-        self.image = pygame.image.load('resources/images/bullet2.png')
+        self.image = pygame.image.load('resources/images/bullet/bullet2.png')
         self.size = (130, 40)
         self.image = pygame.transform.scale(self.image, self.size)
         self.damage = 1
@@ -136,7 +136,7 @@ class bullet(pygame.sprite.Sprite):
         self.speed = 40
 
     def change_dir(self):
-        self.image = pygame.image.load('resources/images/bullet3.png')
+        self.image = pygame.image.load('resources/images/bullet/bullet8.png')
         self.size = (20, 100)
         self.image = pygame.transform.scale(self.image, self.size)
         self.damage = 1

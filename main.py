@@ -21,4 +21,4 @@ if __name__ == "__main__":
     else:
         screen = pygame.display.set_mode((1000,600))
         gameover(screen)
-    pygame.quit()
+    pygame.quit() 

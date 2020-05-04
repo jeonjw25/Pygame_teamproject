@@ -6,7 +6,7 @@ class ITEM(pygame.sprite.Sprite):
         super(ITEM, self).__init__()
         self.itemno = random.choices(range(0,4), weights=[1,2,5,3])[0]
         print(self.itemno)
-        img = ['resources/images/item.png','resources/images/item1.png','resources/images/item2.png','resources/images/item3.png']
+        img = ['resources/images/items/item4.png','resources/images/items/item1.png','resources/images/items/item2.png','resources/images/items/item3.png']
         print(self.itemno)
         self.image = pygame.image.load(img[self.itemno])
         self.size = (60,60)

@@ -19,11 +19,17 @@ class game:
         self.items = pygame.sprite.Group()
         self.all_sprites.add(self.player)
         self.FPS = 20
-        self.health_img = pygame.image.load("resources/images/health.png")
-        self.healthbar_img = pygame.image.load("resources/images/healthbar.png")
-        print(self.healthbar_img.get_rect())
+        # health
+        self.health_img = pygame.image.load("resources/images/health/health.png")
+        self.healthbar_img = pygame.image.load("resources/images/health/healthbar.png")
         self.healthbar_img = pygame.transform.scale(self.healthbar_img, (195, 20))
         self.a = 0
+        # score
+        self.score = 0
+        self.font = pygame.font.SysFont("resources/font/metal1.ttf", 35)
+        self.text = self.font.render(("SCORE : " ), True, (0, 0, 0))
+
+
     
     def events(self):
         for event in pygame.event.get():
@@ -133,4 +139,7 @@ class game:
         screen.blit(self.healthbar_img, (25, 25))
         for i in range(self.player.hp*19):
             screen.blit(self.health_img, (i+28, 28))
+        screen.blit(self.text, (30, 50))
         pygame.display.update()
+
+    

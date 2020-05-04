@@ -5,7 +5,7 @@ import random
 class soldier(pygame.sprite.Sprite):
     def __init__(self):
         super(soldier, self).__init__()
-        self.image = pygame.image.load('resources/images/soldier1.png')
+        self.image = pygame.image.load('resources/images/enemy/enemy2/soldier1.png')
         self.size = 120
         self.image = pygame.transform.scale(self.image,(self.size,self.size))
         self.posx, self.posy = 0, 0
@@ -49,9 +49,9 @@ class soldier(pygame.sprite.Sprite):
             all_sprites.add(gun)
 
     def motion(self, all_sprites, enemys, items):
-        hit_image = ['resources/images/soldier8.png','resources/images/soldier9.png']
-        walk_image = ['resources/images/soldier1.png','resources/images/soldier2.png','resources/images/soldier3.png','resources/images/soldier4.png']
-        shoot_image = ['resources/images/soldier5.png','resources/images/soldier6.png','resources/images/soldier7.png']
+        hit_image = ['resources/images/enemy/enemy2/soldier8.png','resources/images/enemy/enemy2/soldier9.png']
+        walk_image = ['resources/images/enemy/enemy2/soldier1.png','resources/images/enemy/enemy2/soldier2.png','resources/images/enemy/enemy2/soldier3.png','resources/images/enemy/enemy2/soldier4.png']
+        shoot_image = ['resources/images/enemy/enemy2/soldier5.png','resources/images/enemy/enemy2/soldier6.png','resources/images/enemy/enemy2/soldier7.png']
         if self.hitno == 2:
             new_item = item.ITEM()
             new_item.rect.move_ip(self.posx, self.posy+60)
@@ -69,7 +69,7 @@ class soldier(pygame.sprite.Sprite):
             self.image = pygame.image.load(walk_image[self.walk_index])
             self.image = pygame.transform.scale(self.image, (self.size, self.size))
         else:
-            self.image = pygame.image.load('resources/images/soldier1.png')
+            self.image = pygame.image.load('resources/images/enemy/enemy2/soldier1.png')
             self.image = pygame.transform.scale(self.image,(self.size,self.size))
         if self.isshoot ==True and self.delay%25 == 0:
             self.shoot_index = (self.shoot_index + 1) % len(shoot_image)
@@ -82,7 +82,7 @@ class soldier(pygame.sprite.Sprite):
 class enemy_bullet(pygame.sprite.Sprite):
     def __init__(self):
         super(enemy_bullet, self).__init__()
-        self.image = pygame.image.load('resources/images/bullet6.png')
+        self.image = pygame.image.load('resources/images/bullet/bullet6.png')
         self.size = (40,40)
         self.image = pygame.transform.scale(self.image,self.size)
         self.posx = 0
@@ -102,7 +102,7 @@ class enemy_bullet(pygame.sprite.Sprite):
 
     def gun_change(self):
         self.mode = 1
-        self.image = pygame.image.load('resources/images/bullet5.png')
+        self.image = pygame.image.load('resources/images/bullet/bullet9.png')
         self.size = (100, 120)
         self.image = pygame.transform.scale(self.image, self.size)
         self.damage = 1
@@ -113,7 +113,7 @@ class enemy_bullet(pygame.sprite.Sprite):
 class UFO(pygame.sprite.Sprite):
     def __init__(self):
         super(UFO, self).__init__()
-        self.image = pygame.image.load('resources/images/ufo1.png')
+        self.image = pygame.image.load('resources/images/ufo/ufo1.png')
         self.size = 120
         self.image = pygame.transform.scale(self.image, (self.size, self.size))
         self.posx, self.posy = 0,0
@@ -126,7 +126,7 @@ class UFO(pygame.sprite.Sprite):
         self.speed = 2
 
     def motion(self, all_sprites, enemys, items):
-        hit_image = ['resources/images/ufo4.png', 'resources/images/ufo5.png', 'resources/images/ufo6.png']
+        hit_image = ['resources/images/ufo/ufo4.png', 'resources/images/ufo/ufo5.png', 'resources/images/ufo/ufo6.png']
         if self.hitno == 3:
             all_sprites.remove(self)
             enemys.remove(self)
@@ -136,7 +136,7 @@ class UFO(pygame.sprite.Sprite):
             self.image = pygame.transform.scale(self.image, (self.size, self.size))
             self.hitno += 1
         else:
-            self.image = pygame.image.load('resources/images/ufo1.png')
+            self.image = pygame.image.load('resources/images/ufo/ufo1.png')
             self.image = pygame.transform.scale(self.image, (self.size, self.size))
 
     def hit(self, all_sprites, bullets):
@@ -169,47 +169,47 @@ class UFO(pygame.sprite.Sprite):
             enemy_bullets.add(gun)
             all_sprites.add(gun)
 
-class boss(pygame.sprite.Sprite):
-    def __init__(self):
-        super(boss, self).__init__()
-        self.image = pygame.image.load('resources/images/boss1.png')
-        self.size = 200
-        self.image = pygame.transform.scale(self.image, (self.size, self.size))
-        self.rect = self.image.get_rect()
-        self.posx = 800  # 그냥 초기화값
-        self.posy = 300  # 그냥 초기화값
-        self.ishit = False
-        self.hitno = 0
-        self.mode = 0
+# class boss(pygame.sprite.Sprite):
+#     def __init__(self):
+#         super(boss, self).__init__()
+#         self.image = pygame.image.load('resources/images/boss/boss1.png')
+#         self.size = 200
+#         self.image = pygame.transform.scale(self.image, (self.size, self.size))
+#         self.rect = self.image.get_rect()
+#         self.posx = 800  # 그냥 초기화값
+#         self.posy = 300  # 그냥 초기화값
+#         self.ishit = False
+#         self.hitno = 0
+#         self.mode = 0
 
-    def motion(self, all_sprites, enemys, items):
-        hit_image = ['resources/images/boss1.png']
-        if self.hitno == 50:
-            all_sprites.remove(self)
-            enemys.remove(self)
-        if self.ishit and self.hitno < 45:
-            self.index = (self.hitno) % len(hit_image)
-            self.image = pygame.image.load(hit_image[0])
-            self.image = pygame.transform.scale(self.image, (self.size, self.size))
-            self.hitno += 1
-        elif self.ishit and self.hitno < 45:  # 마지막 다섯대 맞을동안 폭발하는이미지출력
-            self.image = pygame.image.load('resources/images/boss_die.png')
-            self.image = pygame.transform.scale(self.image, (self.size, self.size))
-            self.hitno += 1
+#     def motion(self, all_sprites, enemys, items):
+#         hit_image = ['resources/images/boss/boss1.png']
+#         if self.hitno == 50:
+#             all_sprites.remove(self)
+#             enemys.remove(self)
+#         if self.ishit and self.hitno < 45:
+#             self.index = (self.hitno) % len(hit_image)
+#             self.image = pygame.image.load(hit_image[0])
+#             self.image = pygame.transform.scale(self.image, (self.size, self.size))
+#             self.hitno += 1
+#         elif self.ishit and self.hitno < 45:  # 마지막 다섯대 맞을동안 폭발하는이미지출력
+#             self.image = pygame.image.load('resources/images/boss/boss_die.png')
+#             self.image = pygame.transform.scale(self.image, (self.size, self.size))
+#             self.hitno += 1
 
-        else:
-            self.image = pygame.image.load('resources/images/boss1.png')
-            self.image = pygame.transform.scale(self.image, (self.size, self.size))
+#         else:
+#             self.image = pygame.image.load('resources/images/boss/boss1.png')
+#             self.image = pygame.transform.scale(self.image, (self.size, self.size))
 
-    def hit(self, all_sprites, bullets, enemys):
-        hits = pygame.sprite.spritecollide(self, bullets, False)
-        if hits:
-            self.ishit = True
-            all_sprites.remove(hits[0])
-            bullets.remove(hits[0])
-            return True
+#     def hit(self, all_sprites, bullets, enemys):
+#         hits = pygame.sprite.spritecollide(self, bullets, False)
+#         if hits:
+#             self.ishit = True
+#             all_sprites.remove(hits[0])
+#             bullets.remove(hits[0])
+#             return True
 
-    def update(self, x=0, y=0):
-        self.posx += x
-        self.posy += y
-        self.rect.move_ip(x, y)
+#     def update(self, x=0, y=0):
+#         self.posx += x
+#         self.posy += y
+#         self.rect.move_ip(x, y)
