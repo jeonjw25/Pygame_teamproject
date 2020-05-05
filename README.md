@@ -72,9 +72,7 @@ map_1 개발 <br>
 > image collect <br>
 * 5.5
 > image collect <br>
- 
-
- 
+> making presentation <br>
 
 #### 201700820 김유림
 
