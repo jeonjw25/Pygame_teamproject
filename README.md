@@ -1,5 +1,5 @@
 # Pygame_teamproject
-Pygame_teamproject
+> Metalslug
 
 ### 팀원
  * 종원 : 팀장 , 깃허브 담당 , 개발
