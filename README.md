@@ -59,6 +59,7 @@ map_1 개발 <br>
 * 5.1
 > menu screen develop <br>
 > (Text, Button, Sound, image, Font) <br>
+> sound file develop <br>
 > Git push complete <br>
 * 5.2
 > pull starting game files(start.py, enemy.py ...) <br>
@@ -66,7 +67,7 @@ map_1 개발 <br>
 > merge f_screen.py and game files <br>
 > item class develop start <br>
 * 5.3
-> item class develop finished
+> item class develop finished <br>
 > 
  
 
