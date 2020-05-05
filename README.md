@@ -14,8 +14,13 @@
 > 4. Mission complete or Mission Failed 화면 
 
 ## 게임 개요
-* 마지막 stage 보스 죽이면 victory <br>
-* 중간에 죽으면 lose <br>
+* 마지막 stage 보스 죽이면 victory 
+* 중간에 죽으면 lose 
+* H 아이템 먹으면 총 변경
+* 구급상자 아이템 먹으면 HP 회복
+* 기타 다른 아이템 먹으면 점수 획득
+* 적 한명 죽일때 점수 획득
+* 최종 보스 죽일때 점수 
 
 ## 게임 방법
 * 왼쪽 방향키 : 왼쪽 이동 
@@ -51,9 +56,12 @@ map_1 개발 <br>
 > image, font, sound loading <br>
 > Button, text <br>
 * 5.1
- menu screen develop <br>
- (Text, Button, Sound, image, Font) <br>
- Git push complete <br>
+> menu screen develop <br>
+> (Text, Button, Sound, image, Font) <br>
+> Git push complete <br>
+* 5.2
+> 
+ 
 
  
 
