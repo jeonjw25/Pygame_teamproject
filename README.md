@@ -41,7 +41,8 @@
 * 5.6
 * 발표 준비
 
-#### 201603008 전종원
+## 팀원 개발 일지
+### 201603008 전종원
 * 4.30 <br>
 pygame module 공부 <br>
 git 공부 <br>
@@ -49,7 +50,7 @@ git 공부 <br>
 map_1 개발 <br>
 
 
-#### 201602560 이재성
+### 201602560 이재성
 * 4.30 
 > pygame module 공부 <br>
 > basic game coding (토끼 게임) <br>
@@ -60,6 +61,12 @@ map_1 개발 <br>
 > (Text, Button, Sound, image, Font) <br>
 > Git push complete <br>
 * 5.2
+> pull starting game files(start.py, enemy.py ...) <br>
+> putting all together with f_screen.py (menu.py, complete.py, gameover.py) <br>
+> merge f_screen.py and game files <br>
+> item class develop start <br>
+* 5.3
+> item class develop finished
 > 
  
 
