@@ -12,9 +12,6 @@ Pygame_teamproject
 2. 스테이지 2개(기본 + 보스 스테이지)
 3. victory / lose 화면 (에니메이션 처리 찾아보기)
 
-보스 죽이고 포로 구하면 victory <br>
-중간에 죽으면 lose <br>
-
 
 ### 계획
 * 4.30
