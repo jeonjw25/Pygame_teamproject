@@ -1,14 +1,14 @@
 import pygame, sys
 # from pygame.rect import Rect
-import start, stage
+import start, stage, sound
 from start import *
 from stage import *
 
 
-#sound.intro_music(0.3)
 g = start.game()
 
-def menu(screen):
+def menu(screen): 
+    sound.intro_music(0.3)
     
     image = pygame.transform.scale(pygame.image.load("resources/images/screen_images/backscreen.png"), (1000, 736)).convert_alpha()
     screen.blit(image, (0, 0))
@@ -49,12 +49,12 @@ def menu(screen):
 
 def help_screen(screen):
 
-    image = pygame.image.load("resources/images/screen_images/helpscreen.png")
+    image = pygame.transform.scale(pygame.image.load("resources/images/screen_images/helpscreen.png"), (1000, 736)).convert_alpha()
     
     screen.blit(image, (0, 0))
     
     goback_button =  pygame.transform.scale(pygame.image.load("resources/images/button_images/goback_button.png"), (175, 45)).convert_alpha()
-    goback_rect = goback_button.get_rect(x = 100, y = 540)
+    goback_rect = goback_button.get_rect(x = 100, y = 600)
     screen.blit(goback_button, goback_rect)
 
     pygame.display.flip()
@@ -88,18 +88,19 @@ def complete(screen):
         for event in pygame.event.get():
             if continue_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    g.play(screen, stage.stage1())
+                    # g.play(screen, stage.stage1())
+                    return 1
                     pass
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
 
 def gameover(screen):
-    #sound.gameover_music(0.3)
+    sound.gameover_music(0.3)
 
     image = pygame.image.load("resources/images/screen_images/gameover.png")
     screen.blit(image, (0, 0))
-
+    sound.gameover_music(0.3)
     continue_button = pygame.transform.scale(pygame.image.load("resources/images/button_images/continue_button.png"), (210, 48)).convert_alpha()
     continue_rect = continue_button.get_rect(x = 730, y = 520)
 
@@ -114,12 +115,7 @@ def gameover(screen):
             if continue_rect.collidepoint(pygame.mouse.get_pos()):
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # restart option
-                    screen = pygame.display.set_mode((1000,736))
-                    menu(screen)
-                    pass
-            if event.type == pygame.QUIT:
+                    return 1
+            elif event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-
-# def ch_mode(option):
-#     if option == 1:
